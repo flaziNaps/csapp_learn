@@ -1,5 +1,5 @@
 /*
- * cachelab.c - Cache Lab helper functions
+ * cachelab.c - cache lab 帮助功能
  */
 #include <stdio.h>
 #include <stdlib.h>
