@@ -1,5 +1,9 @@
 /*
- * cachelab.c - cache lab 帮助功能
+<<<<<<< HEAD
+ * cachelab.c - Cache Lab helper functions
+=======
+ * cachelab.c - Cache Lab helper functions
+>>>>>>> origin/master
  */
 #include <stdio.h>
 #include <stdlib.h>

@@ -143,7 +143,11 @@ NOTES:
  *   Rating: 1
  */
 int bitXor(int x, int y) {
+<<<<<<< HEAD
   return ~((~(x&(~y)))&(~((~x)&y)));
+=======
+  return 2;
+>>>>>>> origin/master
 }
 /* 
  * tmin - return minimum two's complement integer 
@@ -153,7 +157,11 @@ int bitXor(int x, int y) {
  */
 int tmin(void) {
 
+<<<<<<< HEAD
   return 1<<31;
+=======
+  return 2;
+>>>>>>> origin/master
 
 }
 //2
@@ -165,7 +173,11 @@ int tmin(void) {
  *   Rating: 1
  */
 int isTmax(int x) {
+<<<<<<< HEAD
   return (!((~x)^(x+1)))&(!!(x+1));
+=======
+  return 2;
+>>>>>>> origin/master
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
@@ -176,10 +188,14 @@ int isTmax(int x) {
  *   Rating: 2
  */
 int allOddBits(int x) {
+<<<<<<< HEAD
   int mask = 0xAA;
   mask = mask | (mask<<8);
   mask = mask | (mask<<16);  
   return !((~x)&mask);
+=======
+  return 2;
+>>>>>>> origin/master
 }
 /* 
  * negate - return -x 
@@ -189,9 +205,13 @@ int allOddBits(int x) {
  *   Rating: 2
  */
 int negate(int x) {
+<<<<<<< HEAD
   //tmin的情况下取反是它本身，所以需要判断
   //正常情况下，就是按位取反再+1
   return (~x+1);
+=======
+  return 2;
+>>>>>>> origin/master
 }
 //3
 /* 
@@ -204,12 +224,16 @@ int negate(int x) {
  *   Rating: 3
  */
 int isAsciiDigit(int x) {
+<<<<<<< HEAD
   //首先是检查左边四位,是否与0x3相等
   //之后是检查右边四位
   // return (!((x>>4)^(0x3)))& (!!(((x&0x0f)+(~0x0a+1))>>7));
   int low = x + (~0x30 + 1);//x-0x30
   int high = 0x39 + (~x + 1);//0x39-x
   return (!((low>>31)&1)) & (!((high>>31)&1));
+=======
+  return 2;
+>>>>>>> origin/master
 }
 /* 
  * conditional - same as x ? y : z 
@@ -219,9 +243,13 @@ int isAsciiDigit(int x) {
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
+<<<<<<< HEAD
   int boolx = (!!x);
   int mask = (~boolx + 1);
   return (mask & y) | ((~mask)&z);
+=======
+  return 2;
+>>>>>>> origin/master
 }
 /* 
  * isLessOrEqual - if x <= y  then return 1, else return 0 
@@ -231,8 +259,12 @@ int conditional(int x, int y, int z) {
  *   Rating: 3
  */
 int isLessOrEqual(int x, int y) {
+<<<<<<< HEAD
   //两个条件，一个小于，一个等于
   return !(x^y) | (!!((x+(~y+1))>>31));
+=======
+  return 2;
+>>>>>>> origin/master
 }
 //4
 /* 
@@ -244,7 +276,11 @@ int isLessOrEqual(int x, int y) {
  *   Rating: 4 
  */
 int logicalNeg(int x) {
+<<<<<<< HEAD
   return ((x | (~x+1))>>31)+1;
+=======
+  return 2;
+>>>>>>> origin/master
 }
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement
@@ -259,6 +295,7 @@ int logicalNeg(int x) {
  *  Rating: 4
  */
 int howManyBits(int x) {
+<<<<<<< HEAD
   // 1. 把所有变量声明都提到最前面
   int sign, b16, b8, b4, b2, b1, b0;
 
@@ -279,6 +316,9 @@ int howManyBits(int x) {
   b0 = x;
 
   return b16 + b8 + b4 + b2 + b1 + b0 + 1;
+=======
+  return 0;
+>>>>>>> origin/master
 }
 //float
 /* 
@@ -293,6 +333,7 @@ int howManyBits(int x) {
  *   Rating: 4
  */
 unsigned floatScale2(unsigned uf) {
+<<<<<<< HEAD
   unsigned s = uf & 0x80000000;
   unsigned exp = (uf>>23) & 0xFF;
   unsigned frac = uf & 0x007FFFFF;
@@ -308,6 +349,9 @@ unsigned floatScale2(unsigned uf) {
     frac = 0;
   }
   return s | (exp<<23) | frac;
+=======
+  return 2;
+>>>>>>> origin/master
 }
 /* 
  * floatFloat2Int - Return bit-level equivalent of expression (int) f
@@ -322,6 +366,7 @@ unsigned floatScale2(unsigned uf) {
  *   Rating: 4
  */
 int floatFloat2Int(unsigned uf) {
+<<<<<<< HEAD
   // 1. 所有声明放在最顶端
   unsigned s = uf & 0x80000000;
   unsigned exp = (uf >> 23) & 0xFF;
@@ -349,6 +394,9 @@ int floatFloat2Int(unsigned uf) {
   } else {
     return M;
   }
+=======
+  return 2;
+>>>>>>> origin/master
 }
 /* 
  * floatPower2 - Return bit-level equivalent of the expression 2.0^x
@@ -364,6 +412,7 @@ int floatFloat2Int(unsigned uf) {
  *   Rating: 4
  */
 unsigned floatPower2(int x) {
+<<<<<<< HEAD
     unsigned exp; // 提到外面来声明
     
     if (x < -149) {
@@ -378,3 +427,7 @@ unsigned floatPower2(int x) {
     }
     return (0xFF << 23);
 }
+=======
+    return 2;
+}
+>>>>>>> origin/master
