@@ -3,6 +3,9 @@
  *
  * Each transpose function must have a prototype of the form:
  * void trans(int M, int N, int A[N][M], int B[M][N]);
+ * 
+ * Name: flazi
+ * Login ID: flazi
  *
  * A transpose function is evaluated by counting the number of misses
  * on a 1KB direct mapped cache with a block size of 32 bytes.
@@ -11,7 +14,7 @@
 #include "cachelab.h"
 
 int is_transpose(int M, int N, int A[N][M], int B[M][N]);
-
+void trans(int M, int N, int A[N][M], int B[M][N]);
 /* 
  * transpose_submit - This is the solution transpose function that you
  *     will be graded on for Part B of the assignment. Do not change
@@ -22,6 +25,25 @@ int is_transpose(int M, int N, int A[N][M], int B[M][N]);
 char transpose_submit_desc[] = "Transpose submission";
 void transpose_submit(int M, int N, int A[N][M], int B[M][N])
 {
+    if(is_transpose(M,N,A,B)){
+        return;
+    }
+    if(M==32&&N==32){
+        for(int i=0;i<N;i++){
+            for(int j=0;j<M;j++){
+                //B[j][i]=A[i][j];//现在得情况A得空间局部性很好，B得空间局部性不好
+                
+            }
+        }
+
+    }else if(M==64&&N==64){
+        
+    }else if(M==61&&N==67){
+      
+    }else{
+        trans(M,N,A,B);
+    }
+
 }
 
 /* 
